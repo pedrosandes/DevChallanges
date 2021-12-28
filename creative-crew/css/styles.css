@@ -5,6 +5,12 @@
   margin: 110px auto 24px auto;
   padding: 0 19px
 }
+
+@media screen and (max-width: 480px){
+  .layout{
+    margin-top: 71px;
+  }
+}
 /* ========= END LAYOUT ===========*/
 
 /* ======== START HEADER ==========*/
@@ -12,12 +18,6 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 90px;
-}
-
-@media screen and (max-width: 800px) {
-  .header {
-    flex-direction: column;
-  }
 }
 
 .header .title {
@@ -36,8 +36,20 @@
 .header .header-texts h2 {
   text-transform: uppercase;
   font-weight: 600;
-
 }
+
+@media screen and (max-width: 800px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .header .title{
+    font-size: 2.6rem;
+  }
+}
+
 /* ========= END HEADER ===========*/
 
 /* ======== START MAIN ==========*/
@@ -164,3 +176,17 @@
 }
 /* ========= END MAIN ===========*/
 
+/* ======= START FOOTER =========*/
+.footer p {
+  font: normal 500 1.4rem/1.7rem "Montserrat"; 
+  text-align: center;
+  color: #A9A9A9;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.footer p .link {
+  font-weight: 700;
+  text-decoration: underline;
+}
+/* ========= END FOOTER ==========*/
