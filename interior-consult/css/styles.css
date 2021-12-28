@@ -1,0 +1,325 @@
+/*======== START ANIMATION ======= */
+@keyframes fade {
+  from {
+    opacity: 0;;
+  }
+  to {
+    opacity: 1;;
+  }
+}
+/*========= END ANIMATION ======== */
+
+/*======== START LAYOUT ======= */
+.layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/*========= END LAYOUT ======== */
+
+/*======== START HEADER ======= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 42px 20px;
+  animation: fade 1s;
+}
+
+.header .brand {
+  border: 2px solid var(--white);
+  padding: 8px;
+  font: normal 200  1.4rem 'Crimson Pro';
+  text-transform: uppercase;
+}
+
+.header .nav {
+  display: flex;
+  gap: 86px;
+}
+
+.header .nav .nav-link {
+  font-size: 1.8rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.header .nav .nav-link.active {
+  font-weight: 700;
+}
+
+.header .nav .nav-link.active::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+
+.header .nav .nav-link::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  transition: ease .4s;
+  background-color: #fff;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+
+.header .nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.header .menu, .menu-close {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .header{
+    padding: 19px 12px 25px 12px;
+  }
+
+  .header .nav {
+    display: none;
+  }
+
+  .header .menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .header .nav.open {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* left: 0; */
+    /* right: 0; */
+    z-index: 1;
+  }
+
+  .header .menu-close {
+    cursor: pointer;
+    position: absolute;
+    top: 48px;
+    right: 42px;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .header .menu-close {
+    top: 25px;
+    right: 12px;
+  }
+}
+/*========= END HEADER ======== */
+
+/*======== START MAIN ======= */
+.main {
+  padding: 100px 20px 270px 20px;
+  display: flex;
+  align-items: center;
+  gap: 87px;
+  animation: fade 3s;
+}
+
+.main .box-text {
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.main .box-text h1 {
+  font-family: 'Lora';
+  font-size: 4.8rem;
+}
+
+.main .box-text p {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+}
+
+.main .box-text button {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  align-self: flex-start;
+  gap: 14px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.main .box-text button::after, .main .box-text button::before {
+  content: "";
+  display:block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  border-radius: 2px;
+  transition: all 0.4s;
+}
+
+.main .box-text button::after {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: var(--white);
+  border-left-color: var(--white);
+}
+
+.main .box-text button::before {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: var(--white);
+  border-right-color: var(--white);
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.main .box-text button:hover::after, .box-text button:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.main .box-image {
+  position: relative;
+}
+
+.main .box-image .image {
+  max-width: 737px;
+}
+
+.main .box-image .card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 18px 153px 34px 26px;
+  background-color: var(--background);
+  box-shadow: 0px 4px 4px 0px #00000040;
+  position: absolute;
+  bottom: -102px;
+  right: 64px;
+}
+
+.main .box-image .card .card-header {
+  display: flex;
+  gap: 19px;
+  align-items: center;
+}
+
+.main .box-image .card .card-header .image {
+  max-width: 50px;
+}
+
+.main .box-image .card .card-header .image img {
+  border-radius: 50%;
+}
+
+.main .box-image .card .card-header .texts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main .box-image .card .card-header .texts .name {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.main .box-image .card .card-header .texts .profession {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #828282;;
+}
+
+.main .box-image .card .card-body {
+  font: normal 700 2.4rem 'Lora'
+}
+
+@media screen and (max-width: 1050px) {
+  .main {
+    padding: 0 12px 143px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .main .box-text {
+    gap: 25px;
+  }
+
+  .main .box-text h1 {
+    font-size: 3.6rem;
+  }
+  .main .box-text p {
+    font-size: 1.4rem;
+    line-height: 17px;
+  }
+
+  .main .box-text button {
+    font-size: 1.4rem;
+  }
+
+  .main .box-image .card {
+    gap: 21px;
+    padding: 13px 71px 25px 19px;
+    bottom: -82px;
+    right: 26px;
+  }
+
+  .main .box-image .image {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .main .box-image .card .card-header .texts .name {
+    font-size: 1.2rem;
+  }
+  
+  .main .box-image .card .card-header .texts .profession {
+    font-size: 1rem;
+  }
+
+  .main .box-image .card .card-body {
+    font: normal 700 1.8rem 'Lora'
+  }
+}
+/*========= END MAIN ======== */
+
+/*======== START FOOTER ======= */
+.footer {
+  text-align: center;
+  padding-bottom: 24px;
+  animation: fade 5s;
+}
+
+.footer p {
+  color:  #A9A9A9;
+}
+
+.footer p a.link {
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer
+}
+
+@media screen and (max-width: 475px) {
+  .footer p {
+    font-size: 1.4rem;
+  }
+}
+/*========= END FOOTER ======== */

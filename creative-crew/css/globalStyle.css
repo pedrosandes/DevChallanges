@@ -1,0 +1,15 @@
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Poppins';
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
